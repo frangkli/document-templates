@@ -1,0 +1,60 @@
+\documentclass[11pt, a4paper, openany]{book}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{blindtext}
+\usepackage{microtype}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{index}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+%\usepackage{times}
+
+\makeindex
+\title{\textbf{<++>}}
+\author{Ang Li, Frank}
+\date{\today}
+\usetikzlibrary{decorations.pathreplacing}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\begin{document}
+
+\pagenumbering{roman}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
+\fancyhf{}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyfoot[LE,RO]{\thepage}
+
+\maketitle
+\tableofcontents
+
+\chapter{<++>}
+
+\begin{tcolorbox}
+\textbf{Key points from this section:}
+\begin{enumerate}\itemsep0em
+	\item <++>
+\end{enumerate}
+\end{tcolorbox}
+
+\section{<++>}
+
+\subsection{<++>}
+
+\end{document}
