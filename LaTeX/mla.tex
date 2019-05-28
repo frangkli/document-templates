@@ -1,19 +1,32 @@
-\documentclass[12pt,letterpaper]{article}
-\usepackage{ifpdf}
-\usepackage{mla}
+\documentclass[12pt,a4paper,openany]{article}
+\usepackage{microtype} % Better font precision and spacing.
+\usepackage{blindtext} % Place holder text generator.
+\usepackage{ifpdf} % MLA package dependency for pdftex.
+\usepackage{mla} % MLA formating preset.
+\usepackage[english]{babel} % Set English as language.
 
 \begin{document}
-% MLA Style Title:
-% \begin{mla}{First Name}{Last Name}{Teacher Name}{Subject Name}{Date}{Title}
+% MLA Style Title
+% First Name, Last Name, Teacher Name, Subject Name, Date, Title.
 \begin{mla}{Ang}{Li}{<++>}{<++>}{\today}{<++>}
 
     <++>
 
-% Works Cited:
-% Author Last Name, Author First Name, Paper Title, Publication Title, URL, Date
 \begin{workscited}
+% Works Cited Formats
+% Book: Last Name, First Name. Title of Book. City of Publication, Publisher, Publication Date.
+%
+% Website (Detailed): Author. "Title." Title of container (self contained if book),
+%   Other contributors (translators or editors), Version (edition), Number (vol. and/or no.),
+%   Publisher, Publication Date, Location (pages, paragraphs and/or URL, DOI or permalink).
+%   2nd container’s title, Other contributors, Version, Number, Publisher, Publication date,
+%   Location, Date of Access (if applicable).
+%
+% Website (Basic): Editor, author, or compiler name (if available). Name of Site.
+%   Version number, Name of institution/organization affiliated with the site (sponsor or publisher),
+%   date of resource creation (if available), URL, DOI or permalink. Date of access (if applicable).
 \bibent
-    <++>, <++>.  ``<++>"  \textit{<++>}. <++>. Access on <++>.
+    <++>, <++>. ``<++>" \textit{<++>}, <++>, <++>. Accessed <++>.
 \end{workscited}
 
 \end{mla}
