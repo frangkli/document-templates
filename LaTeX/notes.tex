@@ -1,60 +1,78 @@
-\documentclass[11pt,a4paper,openany]{book}
-\usepackage{graphicx}
-\usepackage{colortbl}
-\usepackage{amsmath}
-\usepackage{tikz}
-\usepackage{blindtext}
-\usepackage{microtype}
-\usepackage{wrapfig}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{index}
-\usepackage{tcolorbox}
-\usepackage{booktabs}
-\usepackage{hyperref}
-\usepackage[margin=1in]{geometry}
-\usepackage[english]{babel}
-%\usepackage{times}
+\documentclass{article}
+\usepackage[margin=1in]{geometry} % PDF geometry
+\usepackage[utf8]{inputenc} % Allow non-ASCII characters
+\usepackage{tikz} % Draw figures
+\usepackage{amsmath} % Basic math operations
+\usepackage{amssymb} % Better math symbols
+\usepackage{pgfplots} % Generate plots
+\usepackage{pgfplotstable} % Table with pgfplots and csv
+\usepackage{float} % Easy table placement
+\usepackage{mathtools} % Math equation utilities
+\usepackage{wrapfig} % Wrap figure in text
+\usepackage{microtype} % Better spacing
+\usepackage{hyperref} % Href in PDF
+\usepackage{fancyhdr} % Good looking headers
+\usepackage{tcolorbox} % Generate colored text box
+\usepackage{graphicx} % Handles images
+\usepackage{enumitem} % List management
+\usepackage{booktabs} % More flexible tables
+\usepackage{siunitx} % Better SI units
 
-\makeindex
-\title{\textbf{<++>}}
-\author{Ang Li, Frank}
-\date{\today}
-\usetikzlibrary{decorations.pathreplacing}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
+%\usepackage{colortbl} % Color tables
+%\usepackage[style=mla, backend=biber, citestyle=authoryear, sorting=none]{biblatex}
+%\usepackage{circuitikz} % Generate circuit diagrams
+%\usepackage[version=4]{mhchem} % Write chemical equations
+%\usepackage{chemfig} % Generate molecular diagrams
+
+\pgfplotsset{compat=1.6}
+\hypersetup{colorlinks, linkcolor=black, linktoc=all}
+\pagestyle{fancy}
+\fancyhead[C]{<++>}
+\fancyfoot[C]{Ang Li (Frank)}
+\fancyfoot[R]{\thepage}
+%\addbibresource{/Users/frank/Documents/Bibliography/<++>.bib}
+%\defbibheading{bibliography}{\section*{Works Cited}}
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
+%\DeclareFieldFormat{extradate}{\iffieldnums{labelyear}{}{\apashortdash\mknumalph{#1}}}
+%\urlstyle{rm}
+
 
 \begin{document}
 
-\pagenumbering{roman}
-\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+\begin{titlepage}
+    \newgeometry{left=3cm}
+    \pagecolor{titlepagecolor}
+    \noindent
+    \color{white}
+    \makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
+    \par
+    \noindent
+    \textbf{Yew Chung International School of Shanghai} Y11
+    \vfill
+    \noindent
+    % Subject of document
+    {\Huge <++>}
 
-\fancyhf{}
-\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\footrulewidth}{1pt}
-\fancyhead[LE]{\leftmark}
-\fancyhead[RO]{\nouppercase{\rightmark}}
-\fancyfoot[LE,RO]{\thepage}
+    \vspace{0.5cm}\noindent
+    % Document title
+    {\Huge \textbf{<++>}}
+    \vskip\baselineskip
+    \noindent
+    Ang Li (Frank)
 
-\maketitle
+    \noindent
+    Last Updated: \today
+\end{titlepage}
+\restoregeometry
+\nopagecolor
+
 \tableofcontents
-
-\chapter{<++>}
-
-\begin{tcolorbox}
-\textbf{Key points from this section:}
-\begin{enumerate}\itemsep0em
-	\item <++>
-\end{enumerate}
-\end{tcolorbox}
+\listoffigures
+\pagebreak
 
 \section{<++>}
 
-\subsection{<++>}
+%\printbibliography
 
 \end{document}

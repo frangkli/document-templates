@@ -5,4 +5,12 @@ date: <++>
 link-citations: yes
 output:
     tufte::tufte_handout: default
+header-includes:
+   - \usepackage{mhchem}
+   - \usepackage{siunitx}
+   - \usepackage{amsmath}
+   - \usepackage{pgfplots}
+   - \usepackage{pgfplotstable}
+   - \usepackage{times}
+   - \setlength\parindent{0pt}
 ---
