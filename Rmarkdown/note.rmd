@@ -1,0 +1,17 @@
+---
+title: <++>
+author: Ang Li (Frank)
+date: "`r format(Sys.time(), '%B %d, %Y)`"
+link-citations: yes
+geometry: margin=1in
+output:
+    pdf_document:
+        number_sections: true
+header-includes:
+   - \usepackage{mhchem}
+   - \usepackage{siunitx}
+   - \usepackage{amsmath}
+   - \usepackage{amssymb}
+   - \usepackage{times}
+   - \setlength\parindent{0pt}
+---
