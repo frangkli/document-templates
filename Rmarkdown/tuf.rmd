@@ -1,6 +1,6 @@
 ---
 title: <++>
-author: Ang Li, Frank
+author: Ang Li (Frank)
 date: "`r format(Sys.time(), '%B %d, %Y)`"
 link-citations: yes
 output:
