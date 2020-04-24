@@ -1,0 +1,45 @@
+% Include universal preamble
+\input{/Users/frank/Repositories/Document-Templates/LaTeX/preamble.tex}
+
+% Sources:
+% https://www-math.mit.edu/~psh/amshelp/2.3/template.tex
+% https://gist.github.com/tt6746690/cc8a06d6838f0a4556c7eedc45f020ef
+% https://github.com/gillescastel/university-setup/blob/master/preamble.tex
+
+% Packages
+\usepackage{tikz} % Draw figures
+\usepackage{amssymb} % Better math symbols
+\usepackage{amsfonts} % More math fonts
+\usepackage{pgfplots} % Generate plots
+\usepackage{pgfplotstable} % Table with pgfplots and csv
+\usepackage{mathtools} % Math equation utilities
+\usepackage{siunitx} % Better SI units
+
+% Put x \to \infty below \lim
+\let\svlim\lim\def\lim{\svlim\limits}
+
+% Package settings
+\pgfplotsset{compat=1.6}
+
+% Math shortcuts
+% Number sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+% Special characters
+\newcommand{\itilde}{\tilde{\imath}}
+\newcommand{\jtilde}{\tilde{\jmath}}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+
+% Theorem definitions
+\theoremstyle{plain}
+\newmdtheoremenv[nobreak=true]{thm}{Theorem}[section]
+\newmdtheoremenv[nobreak=true]{cor}{Corollary}[thm]
+\newmdtheoremenv[nobreak=true]{lem}[thm]{Lemma}
+\newmdtheoremenv[nobreak=true]{prop}[thm]{Proposition}
+
+\theoremstyle{remark}
+\newtheorem{nota}[defn]{Notation}

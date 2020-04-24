@@ -1,0 +1,25 @@
+% Include universal preamble
+\input{/Users/frank/Repositories/Document-Templates/LaTeX/preamble.tex}
+
+% Packages
+\usepackage{listings} % Highlight code blocks
+\usepackage{inconsolata} % Monospaced listing font
+\usepackage{textcomp} % Upquote package
+\usepackage[ruled,vlined]{algorithm2e} % Pseudocode and algorithms
+
+% Listing style
+%\lstset{numbers=left}
+\lstset{
+    numbers=left,
+    numberstyle=\small,
+    frame=single,
+    basicstyle=\ttfamily,
+    upquote=true,
+    breaklines=true,
+    xleftmargin=20pt,
+    xrightmargin=5pt,
+    aboveskip=1em,
+    framesep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+}

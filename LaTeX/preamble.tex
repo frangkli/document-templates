@@ -1,0 +1,136 @@
+% Packages
+\usepackage[margin=1in]{geometry} % PDF geometry
+\usepackage[T1]{fontenc} % Better output font
+\usepackage{lmodern} % Modern fonts like quotations
+\usepackage{times} % Times font
+\usepackage{float} % Easy table placement
+\usepackage{wrapfig} % Wrap figure in text
+\usepackage{microtype} % Better spacing
+\usepackage{hyperref} % Href in PDF
+\usepackage{amsthm} % Math theorem
+\usepackage{mdframed} % Frame around text
+\usepackage{fancyhdr} % Good looking headers
+\usepackage{tcolorbox} % Generate colored text box
+\usepackage{graphicx} % Handles images
+\usepackage{enumitem} % List management
+\usepackage{multicol} % Column management
+\usepackage{booktabs} % More flexible tables
+\usepackage{parskip} % No indent more spacing
+\usepackage[style=mla, backend=biber, citestyle=authoryear, sorting=none]{biblatex} % Citations
+
+% Link color
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=black,
+    pdfauthor={Ang Li (Frank)},
+}
+
+% Bibliography settings
+\defbibheading{bibliography}{\section*{Works Cited}}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\DeclareFieldFormat{extradate}{\iffieldnums{labelyear}{}{\apashortdash\mknumalph{#1}}}
+\urlstyle{rm}
+
+% Solution and error marking
+\newenvironment{solution}
+    {\begin{proof}[Solution]}
+    {\end{proof}}
+\definecolor{correct}{HTML}{009900}
+\newcommand{\correct}[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand{\green}[1]{{\color{correct}{#1}}}
+
+% Quote with author
+% https://tex.stackexchange.com/questions/356898/quote-with-author-reference-at-the-end
+\let\oldquote\quote
+\let\endoldquote\endquote
+\renewenvironment{quote}[2][]
+  {\if\relax\detokenize{#1}\relax
+     \def\quoteauthor{#2}%
+   \else
+     \def\quoteauthor{#2~---~#1}%
+   \fi
+   \oldquote}
+  {\par\nobreak\smallskip\hfill(\quoteauthor)%
+   \endoldquote\addvspace{\bigskipamount}}
+
+% Highlighting
+\newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
+
+% Ignore \hfill in toc
+\DeclareRobustCommand*{\IgnoreToc}[1]{#1}
+
+% Lecture command
+\makeatletter
+\def\@lecture{}
+\newcommand{\lecture}[3]{
+    \def\@lecture{Lecture #1: #2 \texorpdfstring{\IgnoreToc{\hfill\small}\normalfont(#3)}{}}
+    \subsection*{\@lecture}
+    \addcontentsline{toc}{subsection}{\@lecture}
+}
+
+% Exercises
+\newcommand{\exercise}[1]{%
+    \def\@exercise{#1}%
+    \subsection*{Exercise #1}
+}
+
+\newcommand{\subexercise}[1]{%
+    \subsubsection*{Exercise \@exercise.#1}
+}
+\makeatother
+
+% Tcolorboxes
+\newenvironment{correction}{\begin{tcolorbox}[
+    arc=0mm,
+    colback=white,
+    colframe=green!60!black,
+    title=Correction,
+    breakable
+]}{\end{tcolorbox}}
+\newenvironment{nooto}[1]{\begin{tcolorbox}[
+    arc=0mm,
+    colback=white,
+    colframe=white!60!black,
+    title=#1,
+    breakable
+]}{\end{tcolorbox}}
+
+% Header and footer
+% https://tex.stackexchange.com/questions/184996/fancyheader-and-appendix
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Ang Li (Frank)}
+
+% Fillin proof ending square
+\renewcommand\qedsymbol{$\blacksquare$}
+
+% Enumerate, itemize, description spacing
+\let\olditem\item
+\renewcommand{\item}{\itemsep0em\parskip0.3em\olditem}
+
+% Theorem spacing
+\makeatletter
+\def\thm@space@setup{%
+    \thm@preskip=0.2em
+    \thm@postskip=0em
+}
+\makeatother
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+% Theorem definitions
+\theoremstyle{definition}
+\newmdtheoremenv[nobreak=true]{defn}{Definition}[section]
+\newtheorem{que}[equation]{Question}
+\newtheorem{term}[defn]{Terminology}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem{ex}{Example}
+
+% Set author
+\author{Ang Li (Frank)}
+\date{Last Updated: \today}
