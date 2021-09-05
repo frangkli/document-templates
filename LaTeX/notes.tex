@@ -1,30 +1,29 @@
 \documentclass[a4paper]{article}
 
 % Source preamble
-\input{/Users/frank/Repositories/Document-Templates/LaTeX/<++>.tex}
+\input{/Users/frank/Repositories/Document-Templates/LaTeX/$1}
 
 % Metadata
-\title{\textit{<++>}\\vspace{0.5em}\huge <++>}
-\date{Last Updated: <++>}
+\title{\textit{${2:${VISUAL:Course Name}}}\\\\\vspace{0.5em}\textbf{\huge ${3:${VISUAL:Topic Name}}}}
 \hypersetup{
-    pdftitle={<++>},
-    pdfsubject={<++>: <++>},
-    pdfkeywords={<++>}
+	pdftitle={$3},
+	pdfsubject={$2: ${4:$3}},
+	pdfkeywords={$5}
 }
-\fancyfoot[L]{<++>}
-\addbibresource{/Users/frank/Documents/Bibliography/<++>.bib}
+\fancyfoot[L]{$3}
+\addbibresource{/Users/frank/Documents/Bibliography/$6.bib}
 
 \begin{document}
 
 \maketitle
 \begingroup
-    \renewcommand*{\IgnoreToc}[1]{}%
-    \tableofcontents
+	\renewcommand*{\IgnoreToc}[1]{}
+	\tableofcontents
 \endgroup
-\listoffigures
+${7:\listoffigures}
 \pagebreak
 
-<++>
+$0
 
 \printbibliography
 

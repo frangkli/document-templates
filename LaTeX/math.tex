@@ -1,5 +1,5 @@
 % Include universal preamble
-\input{/Users/frank/Repositories/Document-Templates/LaTeX/preamble.tex}
+\input{/Users/frank/Repositories/Document-Templates/LaTeX/preamble}
 
 % Sources:
 % https://www-math.mit.edu/~psh/amshelp/2.3/template.tex
@@ -8,25 +8,30 @@
 
 % Packages
 \usepackage{tikz} % Draw figures
-\usepackage{amssymb} % Better math symbols
-\usepackage{amsfonts} % More math fonts
 \usepackage{pgfplots} % Generate plots
 \usepackage{pgfplotstable} % Table with pgfplots and csv
 \usepackage{mathtools} % Math equation utilities
 \usepackage{siunitx} % Better SI units
+\usepackage{bm} % Bold math
 
 % Put x \to \infty below \lim
 \let\svlim\lim\def\lim{\svlim\limits}
+
+% Display math spacing
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
 
 % Package settings
 \pgfplotsset{compat=1.6}
 
 % Math shortcuts
 % Number sets
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\Q}{\mathbb{Q}}
+% \newcommand{\C}{\mathbb{C}}
 
 % Special characters
 \newcommand{\itilde}{\tilde{\imath}}
@@ -41,5 +46,5 @@
 \newmdtheoremenv[nobreak=true]{lem}[thm]{Lemma}
 \newmdtheoremenv[nobreak=true]{prop}[thm]{Proposition}
 
-\theoremstyle{remark}
-\newtheorem{nota}[defn]{Notation}
+\theoremstyle{definition}
+\newmdtheoremenv[nobreak=true]{nota}{Notation}[section]

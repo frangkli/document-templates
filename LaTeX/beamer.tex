@@ -1,0 +1,36 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{material}
+\useDarkTheme
+\useAccentLightBlue
+
+% Source preamble
+\input{/Users/frank/Repositories/Document-Templates/LaTeX/<++>}
+
+% Metadata
+\title{<++>}
+\subtitle{<++>}
+\author{Ang Li (Frank)<++>}
+\institute{Yew Chung International School}
+\date{\today}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\frametitle{Table of Contents}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+\begin{document}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\begingroup
+	\renewcommand*{\IgnoreToc}[1]{}
+	\tableofcontents
+\endgroup
+\end{frame}
+
+<++>
+
+\end{document}

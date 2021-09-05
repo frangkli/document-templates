@@ -1,7 +1,7 @@
 ---
 title: <++>
 author: Ang Li (Frank)
-date: "`r format(Sys.time(), '%B %d, %Y)`"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 link-citations: yes
 geometry: margin=1in
 output:

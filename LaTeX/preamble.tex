@@ -1,6 +1,6 @@
 % Packages
 \usepackage[margin=1in]{geometry} % PDF geometry
-\usepackage[T1]{fontenc} % Better output font
+\usepackage{textcomp} % Better output font
 \usepackage{lmodern} % Modern fonts like quotations
 \usepackage{times} % Times font
 \usepackage{float} % Easy table placement
@@ -8,7 +8,10 @@
 \usepackage{microtype} % Better spacing
 \usepackage{hyperref} % Href in PDF
 \usepackage{amsthm} % Math theorem
+\usepackage{amssymb} % Better math symbols
+\usepackage{amsfonts} % More math fonts
 \usepackage{mdframed} % Frame around text
+\usepackage{multicol} % Multiple columns text
 \usepackage{fancyhdr} % Good looking headers
 \usepackage{tcolorbox} % Generate colored text box
 \usepackage{graphicx} % Handles images
@@ -16,6 +19,11 @@
 \usepackage{multicol} % Column management
 \usepackage{booktabs} % More flexible tables
 \usepackage{parskip} % No indent more spacing
+\usepackage{setspace} % Help with complicated spacing
+\usepackage{import} % Import files
+\usepackage{pdfpages} % View PDF
+\usepackage{transparent} % Allows transparency
+\usepackage{xifthen} % If statement logic in latex
 \usepackage[style=mla, backend=biber, citestyle=authoryear, sorting=none]{biblatex} % Citations
 
 % Link color
@@ -63,6 +71,11 @@
 % Lecture command
 \makeatletter
 \def\@lecture{}
+\newcommand{\leclecture}[3]{
+    \def\@lecture{Lecture #1: #2 \texorpdfstring{\IgnoreToc{\hfill\small}\normalfont(#3)}{}}
+    \section*{\@lecture}
+    \addcontentsline{toc}{subsection}{\@lecture}
+}
 \newcommand{\lecture}[3]{
     \def\@lecture{Lecture #1: #2 \texorpdfstring{\IgnoreToc{\hfill\small}\normalfont(#3)}{}}
     \subsection*{\@lecture}
@@ -102,8 +115,8 @@
 \fancyhead{}
 \fancyfoot{}
 \fancyhead[L]{\leftmark}
-\fancyfoot[C]{\thepage}
-\fancyfoot[R]{Ang Li (Frank)}
+\fancyhead[R]{Ang Li (Frank)}
+\fancyfoot[R]{\thepage}
 
 % Fillin proof ending square
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -116,10 +129,16 @@
 \makeatletter
 \def\thm@space@setup{%
     \thm@preskip=0.2em
-    \thm@postskip=0em
+    \thm@postskip=0.2em
 }
 \makeatother
 \mdfsetup{skipabove=1em,skipbelow=0em}
+
+% Inkscape import
+\newcommand{\incfig}[2]{%
+    \def\svgwidth{#2}
+    \import{./Figures/}{#1.pdf_tex}
+}
 
 % Theorem definitions
 \theoremstyle{definition}
@@ -129,7 +148,18 @@
 
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
+\newtheorem{inv}{Investigation}
 \newtheorem{ex}{Example}
+
+% Verticle line on left of proof
+\surroundwithmdframed[
+   topline=false,
+   rightline=false,
+   bottomline=false,
+   leftmargin=\parindent,
+   skipabove=\medskipamount,
+   skipbelow=\medskipamount
+]{proof}
 
 % Set author
 \author{Ang Li (Frank)}

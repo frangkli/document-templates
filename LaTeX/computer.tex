@@ -1,15 +1,14 @@
 % Include universal preamble
-\input{/Users/frank/Repositories/Document-Templates/LaTeX/preamble.tex}
+\input{/Users/frank/Repositories/Document-Templates/LaTeX/preamble}
 
 % Packages
 \usepackage{listings} % Highlight code blocks
 \usepackage{inconsolata} % Monospaced listing font
 \usepackage{textcomp} % Upquote package
-\usepackage[ruled,vlined]{algorithm2e} % Pseudocode and algorithms
+\usepackage{algorithm2e} % Pseudocode and algorithms
 
 % Listing style
-%\lstset{numbers=left}
-\lstset{
+\lstdefinestyle{program}{
     numbers=left,
     numberstyle=\small,
     frame=single,
@@ -20,6 +19,32 @@
     xrightmargin=5pt,
     aboveskip=1em,
     framesep=5pt,
+    captionpos=b,
     showspaces=false,
     showstringspaces=false,
+    columns=fullflexible,
 }
+\lstdefinestyle{output}{
+    numbers=left,
+    numberstyle=\small,
+    frame=single,
+    basicstyle=\ttfamily,
+    upquote=true,
+    breaklines=true,
+    xleftmargin=20pt,
+    xrightmargin=5pt,
+    aboveskip=1em,
+    framesep=5pt,
+    captionpos=b,
+    showspaces=false,
+    showstringspaces=false,
+    columns=fullflexible,
+}
+
+% Math shortcuts
+% Big O complexity
+% \newcommand{\bo}{\mathcal{O}}
+
+% Theorem definitions
+\theoremstyle{definition}
+\newmdtheoremenv[nobreak=true]{alg}{Algorithm}[section]
